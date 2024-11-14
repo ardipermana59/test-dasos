@@ -1,0 +1,13 @@
+SELECT 
+    tb_product.product_name 'Product Name',
+    tb_product.price 'Price',
+    tb_subkategori.sub_category_name 'Sub Category',
+    tb_kategori.category_name 'Category'
+FROM 
+    tb_product
+JOIN 
+    tb_subkategori ON tb_product.sub_category_id = tb_subkategori.id
+JOIN 
+    tb_kategori ON tb_subkategori.category_id = tb_kategori.id
+ORDER BY 
+    tb_kategori.category_name, tb_subkategori.sub_category_name, tb_product.product_name;

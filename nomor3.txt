@@ -1,0 +1,17 @@
+<?php
+
+function tambah($num1, $num2, $max)
+{
+    $sequence = [$num1, $num2];
+
+    for ($i = 0; $i < $max - 2; $i++) {
+        $nextNumber = $sequence[$i + 1] + $sequence[$i];
+        $sequence[] = $nextNumber;
+    }
+
+    return implode(' ', $sequence);
+}
+
+echo tambah(5, 7, 4);
+echo "\n";
+echo tambah(1, 1, 5);
